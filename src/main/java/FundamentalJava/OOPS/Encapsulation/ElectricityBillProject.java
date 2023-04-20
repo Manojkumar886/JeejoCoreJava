@@ -4,9 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+@Data//getter and setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class ElectricityBillProject
 {
     private int userid;
@@ -15,4 +14,11 @@ public class ElectricityBillProject
     private String Address;
     private double currentMonthcharge;
 
+    public ElectricityBillProject(int userid, String username, long billnumber, String address, double currentMonthcharge) {
+        this.userid = userid;
+        this.username = username;
+        Billnumber = billnumber;
+        Address = address;
+        this.currentMonthcharge = currentMonthcharge;
+    }
 }
