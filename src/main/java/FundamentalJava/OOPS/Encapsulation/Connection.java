@@ -74,7 +74,6 @@ public class Connection implements BillProjectActions
         }
         System.out.println("your value is not deleted");
     }
-
     @Override
     public void searchingancustomervalues(int userid)
     {
@@ -88,10 +87,48 @@ public class Connection implements BillProjectActions
         return;
     }
 
+    @Override
+    public void Sortingancustomervalues()
+    {
+        Scanner scan=new Scanner(System.in);
+        ElectricityBillProject bill=null;
+        System.out.println("field name -sort perforamnce");
+        String field=scan.next();
+        for (int i=0;i<management.length;i++)
+        {
+            for(int j=i+1;j<management.length;j++)
+            {
+                if(field.equalsIgnoreCase("username"))
+                {
+                    if(management[i].getUsername().compareTo(management[j].getUsername())>0)
+                    {
+                        bill=management[i];
+                        management[i]=management[j];
+                        management[j]=bill;
+                    }
+                }
+                else if (field.equalsIgnoreCase("userid"))
+                {
+                    if(management[i].getUserid()<=management[j].getUserid())
+                    {
+                        bill=management[i];
+                        management[i]=management[j];
+                        management[j]=bill;
+                    }
+                }
+            }
+        }
+
+    }
+
     public Connection()
     {
         management[0]=new ElectricityBillProject(4567,"Manojkumar",8907896565645l,"7/234-1,Agaram,Elachipalayam",234.76);
-        System.out.println(Arrays.toString(management));
+        management[1]=new ElectricityBillProject(4568,"Annamalai",9078965656453l,"7/234-1,Agaram,Elachipalayam",34.76);
+        management[2]=new ElectricityBillProject(4569,"Pavithra",1278934565645l,"7/234-1,Agaram,Elachipalayam",347.76);
+        management[3]=new ElectricityBillProject(4570,"Geetha",83907896565645l,"7/234-1,Agaram,Elachipalayam",9000.76);
+        management[4]=new ElectricityBillProject(4571,"Haritha",9907896565645l,"7/234-1,Agaram,Elachipalayam",245.76);
+
     }
 
 
@@ -129,8 +166,11 @@ public class Connection implements BillProjectActions
                     int id=scan.nextInt();
                     connect.deletingcustomervalue(id);
                     break;
+                case 6:
+                    connect.Sortingancustomervalues();
+                    break;
 
-
+                default: return;
             }
 
         }

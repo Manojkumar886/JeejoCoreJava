@@ -7,6 +7,7 @@ public interface BillProjectActions
     public void updatingcustomervalues(String username);
     public void updatingcustomervalues(long Billno);
     public void deletingcustomervalue(int userid);
-
     public void searchingancustomervalues(int userid);
+
+    public void Sortingancustomervalues();
 }
