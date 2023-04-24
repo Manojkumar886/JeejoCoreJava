@@ -9,15 +9,31 @@ public class Connection implements BillProjectActions
     @Override
     public String addnewcustomers(ElectricityBillProject customer)
     {
-        for(int index=0;index<management.length;index++)
+        Scanner scan=new Scanner(System.in);
+        try
         {
-            if (management[index]==null)
+            for(int index=0;index<management.length;index++)
             {
-                management[index]=customer;
-                return customer.getUsername()+"has been added in electricity management";
+                if (management[index]==null)
+                {
+                    management[index]=customer;
+                    return customer.getUsername()+"has been added in electricity management";
+                }
             }
+            throw new ElectricityBillException();
         }
-        return customer.getUsername()+" has not been added";
+        catch(ElectricityBillException EBE)
+        {
+            System.out.println(EBE+"memory is full,so you delete one customer detail");
+            for(ElectricityBillProject EBP: management)
+            {
+                System.out.println(EBP.getUserid());
+            }
+            System.out.println("which user id  you delete in customer detail");
+            deletingcustomervalue(scan.nextInt());
+            addnewcustomers(customer);
+        }
+        return customer.getUsername()+" has been added successfully";
     }
 
     @Override
@@ -177,9 +193,5 @@ public class Connection implements BillProjectActions
         while (
                 true
         );
-
-
     }
-
-
 }
