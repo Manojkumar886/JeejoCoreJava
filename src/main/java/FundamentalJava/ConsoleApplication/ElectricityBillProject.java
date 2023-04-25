@@ -1,13 +1,11 @@
-package FundamentalJava.OOPS.Encapsulation;
+package FundamentalJava.ConsoleApplication;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data//getter and setter
 @NoArgsConstructor
-public class ElectricityBillProject
-{
+public class ElectricityBillProject {
     private int userid;
     private String username;
     private long Billnumber;
