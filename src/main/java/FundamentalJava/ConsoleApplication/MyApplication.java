@@ -8,7 +8,7 @@ public class MyApplication
 
         Thread th1=new Thread(connect_one,"Manojkumar");
 
-        Thread th2=new Thread(connect_one,"Jeezo");
+        Thread th2=new Thread(connect_one,"Jeejo");
 
         Thread th3=new Thread(connect_one,"Annamalai");
 
