@@ -1,6 +1,7 @@
 package FundamentalJava.ConsoleApplication;
 
-public interface BillProjectActions {
+public interface BillProjectActions
+{
     public String addnewcustomers(ElectricityBillProject customer);
 
     public void listallcustomerdetails();
@@ -9,7 +10,7 @@ public interface BillProjectActions {
 
     public void updatingcustomervalues(long Billno);
 
-    public void deletingcustomervalue(int userid);
+    public void deletingcustomervalue(String username);
 
     public void searchingancustomervalues(int userid);
 
