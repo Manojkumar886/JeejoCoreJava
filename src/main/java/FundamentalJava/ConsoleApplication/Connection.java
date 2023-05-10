@@ -1,5 +1,7 @@
 package FundamentalJava.ConsoleApplication;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 public class Connection implements BillProjectActions,Runnable
@@ -7,6 +9,12 @@ public class Connection implements BillProjectActions,Runnable
 //    ElectricityBillProject[] management = new ElectricityBillProject[5];//Array Declaration
 
     TreeSet<ElectricityBillProject> Goverment1=new TreeSet<ElectricityBillProject>();
+    static File myfile=new File("D://okok.txt");
+
+    public static void main(String[] args) throws IOException {
+
+        myfile.createNewFile();
+    }
 
     @Override
     public String addnewcustomers(ElectricityBillProject customer) {

@@ -3,9 +3,11 @@ package FundamentalJava.ConsoleApplication;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data//getter and setter
 @NoArgsConstructor
-public class ElectricityBillProject implements Comparable<ElectricityBillProject>
+public class ElectricityBillProject implements Comparable<ElectricityBillProject>,Serializable
 {
     private int userid;
     private String username;

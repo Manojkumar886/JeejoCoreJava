@@ -1,10 +1,12 @@
 package FundamentalJava.ConsoleApplication;
 
+import java.io.IOException;
+
 public interface BillProjectActions
 {
-    public String addnewcustomers(ElectricityBillProject customer);
+    public String addnewcustomers(ElectricityBillProject customer) throws IOException, ClassNotFoundException;
 
-    public void listallcustomerdetails();
+    public void listallcustomerdetails() throws IOException, ClassNotFoundException;
 
     public void updatingcustomervalues(String username);
 

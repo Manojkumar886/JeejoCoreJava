@@ -9,7 +9,7 @@ import java.util.zip.DeflaterOutputStream;
 public class DemoSecureWrite
 {
     public static void main(String[] args) throws IOException {
-        File obj=new File("D:\\securewrite.txt");
+        File obj=new File("D:\\CollectionofBilDetails.doc");
 //        obj.createNewFile();
 
         FileOutputStream fos=new FileOutputStream(obj);
